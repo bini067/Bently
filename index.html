@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>랜덤 문구</title>
+    <title>랜덤 자동차</title>
     <style>
         body {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-top: 20%;
+        }
+        .car-name {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
-    <p id="message">🔮 마법의 NFC가 말하길... 🔮</p>
-    <button onclick="showRandomMessage()">눌러서 확인하기</button>
+    <p>🚗 랜덤 자동차 추천</p>
+    <p id="carInfo">차량을 추천해드립니다! ⏳</p>
+    <button onclick="updateCar()">새로고침</button>
 
     <script>
-        function showRandomMessage() {
-            const messages = [
-                "기다려 보세요.",
-                "안 돼요!",
-                "한 번 더 해보세요.",
-                "좋은 생각이에요!",
-                "다시 시도해보세요."
-            ];
-            document.getElementById("message").innerText = messages[Math.floor(Math.random() * messages.length)];
+        function updateCar() {
+            const cars = ["Tesla Model S", "BMW M3", "Audi A6", "Hyundai Sonata", "Mercedes-Benz C-Class", "Kia EV6", "Porsche 911"];
+            const randomCar = cars[Math.floor(Math.random() * cars.length)];
+            document.getElementById("carInfo").innerText = `추천 차량: ${randomCar} 🚘`;
         }
     </script>
 </body>
